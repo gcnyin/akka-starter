@@ -1,0 +1,20 @@
+plugins {
+  id 'java'
+  id 'application'
+}
+
+repositories {
+  mavenLocal()
+  maven { url 'https://repo.huaweicloud.com/repository/maven/' }
+  mavenCentral()
+}
+
+dependencies {
+  compile 'com.typesafe.akka:akka-actor-typed_2.13:2.6.10'
+  compile 'ch.qos.logback:logback-classic:1.2.3'
+  testImplementation 'junit:junit:4.13'
+}
+
+application {
+  mainClassName = 'com.github.gcnyin.marsrover.App'
+}
