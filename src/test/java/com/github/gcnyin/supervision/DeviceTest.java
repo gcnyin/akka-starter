@@ -21,6 +21,7 @@ public class DeviceTest {
     device.tell(new Device.PlusOnePing(pong.getRef()));
     pong.expectMessage(new Device.PlugOnePong(1));
     device.tell(new Device.PlusOnePing(pong.getRef()));
+    pong.expectNoMessage();
     device.tell(new Device.PlusOnePing(pong.getRef()));
     pong.expectMessage(new Device.PlugOnePong(3));
   }
