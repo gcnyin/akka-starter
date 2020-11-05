@@ -31,7 +31,7 @@ public class App extends AbstractBehavior<App.Command> {
   }
 
   private Behavior<Command> onMessage(Command command) {
-    System.out.println(command.message);
+    getContext().getLog().info(command.message);
     return this;
   }
 }

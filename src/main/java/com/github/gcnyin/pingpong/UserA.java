@@ -10,6 +10,8 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 public class UserA extends AbstractBehavior<UserA.Greet> {
+  private int count = 0;
+
   @ToString
   @EqualsAndHashCode
   public static class Greet {
@@ -36,8 +38,12 @@ public class UserA extends AbstractBehavior<UserA.Greet> {
   }
 
   private Behavior<Greet> onMessage(Greet command) {
+    if (count == 3) {
+      return this;
+    }
     getContext().getLog().info("Nice to meet you {}!", command.replyTo);
     command.replyTo.tell(new UserB.Greeted(getContext().getSelf()));
+    count++;
     return this;
   }
 }
