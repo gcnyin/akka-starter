@@ -3,6 +3,7 @@
 - First sample
 - Ping-pong
 - Mars-rover
+- Device(SupervisorStrategy)
 
 ## Mars Rover
 
