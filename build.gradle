@@ -1,6 +1,7 @@
 plugins {
   id 'java'
   id 'application'
+  id 'io.franzbecker.gradle-lombok' version '4.0.0'
 }
 
 repositories {
@@ -12,9 +13,14 @@ repositories {
 dependencies {
   compile 'com.typesafe.akka:akka-actor-typed_2.13:2.6.10'
   compile 'ch.qos.logback:logback-classic:1.2.3'
+  testImplementation 'com.typesafe.akka:akka-actor-testkit-typed_2.13:2.6.10'
   testImplementation 'junit:junit:4.13'
 }
 
 application {
   mainClassName = 'com.github.gcnyin.marsrover.App'
+}
+
+test {
+  testLogging.showStandardStreams = true
 }

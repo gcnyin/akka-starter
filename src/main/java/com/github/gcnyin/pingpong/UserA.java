@@ -6,8 +6,12 @@ import akka.actor.typed.javadsl.AbstractBehavior;
 import akka.actor.typed.javadsl.ActorContext;
 import akka.actor.typed.javadsl.Behaviors;
 import akka.actor.typed.javadsl.Receive;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 public class UserA extends AbstractBehavior<UserA.Greet> {
+  @ToString
+  @EqualsAndHashCode
   public static class Greet {
     public final ActorRef<UserB.Greeted> replyTo;
 
